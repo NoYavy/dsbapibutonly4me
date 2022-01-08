@@ -4,7 +4,7 @@
 import dsbapi as dsb
 import time
 import datetime
-
+import buyvape
 
 days = ["Montag","Dienstag","Mittwoch","Donnerstag","Freitag", "Samstag","Sonntag"]
 klasse = "11c"
@@ -16,18 +16,10 @@ while True:
     dayvar = entries[0]
     day = dayvar['day']
     for s in range(len(entries)):
-        if day == "Montag":
-            step = entries[s]
-            teach = step['Lehrer']
-            less = step['Stunde']
-            if teach == "MesD":
-                if less == "2":
-                    print("alarm")
-                    print(entries[s])
-            if teach == "ObeI":
-                if less == "3" or less == "4" or less == "3 - 4":
-                    print("alarm")
-                    print(entries[s])
-            if teach == ""
-        print(entries[s])
+        step = entries[s]
+        teach = step['Lehrer']
+        teach = teach[0:4]
+        less = step['Stunde']
+        entry = entries[s]
+        buyvape.main(day,entry,teach,less)
     time.sleep(600)
