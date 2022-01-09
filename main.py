@@ -21,5 +21,7 @@ while True:
         teach = teach[0:4]
         less = step['Stunde']
         entry = entries[s]
+        print(teach)
+        print(less)
         buyvape.main(day,entry,teach,less)
     time.sleep(600)
