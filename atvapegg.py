@@ -15,20 +15,27 @@ def start(update: Update, context: CallbackContext):
 
 def suckmyanus():
     sadge = main.main()
-    print(sadge)
-    try:
-        return sadge
-    except:
-        pass
+    sad=""
+    for e in sadge:
+        sad = sad+ e
+    print(type(sad))
+    return sad
 
 def dsb(update: Update, context: CallbackContext):
     update.message.reply_text("On it!")
+    used = []
     while True:
-        try:
-            update.message.reply_text(suckmyanus())
-        except:
-            pass
-        time.sleep(600)
+        hara = True
+        sma = suckmyanus()
+        i = 0
+        while i < len(used):
+            if used[i] == sma:
+                hara = False
+            i = i+1
+        if hara:
+            update.message.reply_text(sma)
+        used.append(sma)
+        time.sleep(10)
 def help(update: Update, context: CallbackContext):
     update.message.reply_text("I'll post the DSB-Changes in here. Please don't hurt me.")
 

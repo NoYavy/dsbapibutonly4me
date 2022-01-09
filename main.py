@@ -16,17 +16,19 @@ def main():
     dayvar = entries[0]
     day = dayvar['day']
     finall = []
+    print(len(entries))
     for s in range(len(entries)):
         step = entries[s]
         teach = step['Lehrer']
-        teach = teach[0:4]
+        teach = teach[:4]
         less = step['Stunde']
         entry = entries[s]
-        type = step['Typ']
+        typ = step['Typ']
         print(teach)
         print(less)
-        if buyvape.main(day,entry,teach,less):
-            finall.append(buyvape.main(typ,day,entry,teach,less))
+        if buyvape.main(typ,day,teach,less):
+            finall.append(buyvape.main(typ,day,teach,less))
+            finall.append(" ")
     try:
         return finall
     except:

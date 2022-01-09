@@ -4,16 +4,18 @@
 # Mittwoch: darstellendes Spiel
 # Freitag: Spanisch, Pi
 
-def sabber(day,less,type,teach):
-    stra = "Am " , day , " habt ihr in der ", less, ". Stunde " , type + " bei " + teach
+def sabber(day,less,ma,teach):
+    stra = "Am " , day , " habt ihr in der ", less, ". Stunde " , ma , " bei " , teach
+    stra = ''.join(stra)
     return stra
-def main(typ,day,entry,teach,less):
+def main(ta,day,teach,less):
     finall = []
     if day == "Montag":
         if teach == "KürD":
             if less == "1 - 2":
                 print("alarm")
-                finall.append(sabber(day,less,type,teach))
+                ne = sabber(day,less,ta,teach)
+                print(ne)
         if teach == "ObeI":
             if less == "3" or less == "4" or less == "3 - 4":
                 print("alarm")
@@ -118,4 +120,7 @@ def main(typ,day,entry,teach,less):
                 print("alarm")
                 print(entry)
                 finall.append(entry)
-    return finall
+    try:
+        return ne
+    except:
+        return False
