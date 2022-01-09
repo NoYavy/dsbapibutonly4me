@@ -5,6 +5,7 @@ from telegram.ext.commandhandler import CommandHandler
 from telegram.ext.messagehandler import MessageHandler
 from telegram.ext.filters import Filters
 import main as main
+import time
 
 updater = Updater("5081044030:AAFBKnCNiMLU3vprBe5vnppEs-wDLaENjqg", use_context=True)
 
@@ -14,15 +15,20 @@ def start(update: Update, context: CallbackContext):
 
 def suckmyanus():
     sadge = main.main()
-    sadge = ''.join(sadge)
     print(sadge)
-    return sadge
+    try:
+        return sadge
+    except:
+        pass
 
 def dsb(update: Update, context: CallbackContext):
     update.message.reply_text("On it!")
     while True:
-        update.message.reply_text(suckmyanus())
-        time.sleep(10)
+        try:
+            update.message.reply_text(suckmyanus())
+        except:
+            pass
+        time.sleep(600)
 def help(update: Update, context: CallbackContext):
     update.message.reply_text("I'll post the DSB-Changes in here. Please don't hurt me.")
 
