@@ -1,13 +1,14 @@
-import DSB from 'dsbapi';
+const DSB = require('dsbapi');
 
-const dsb = new DSB('USERNAME', 'PASSWORD');
+const dsb = new DSB('243322', 'HammerHai21');
 
-async function getMyShit() {
-	const data = await dsb.fetch();
-	const timetables = DSB.findMethodInData('timetable', data);
-	const tiles = DSB.findMethodInData('tiles', data);
-
-	// YEAH
-}
-
-getMyShit();
+dsb.fetch()
+	.then(data => {
+		const timetables = DSB.findMethodInData('timetable', data);
+    console.log(timetables)
+		// Work with it
+	})
+	.catch(e => {
+		// An error occurred :(
+		console.log(e);
+	});
