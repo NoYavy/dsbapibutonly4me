@@ -19,19 +19,19 @@ def main(ta,day,teach,less):
         if teach == "ObeI":
             if less == "3" or less == "4" or less == "3 - 4":
                 print("alarm")
-                print(entry)
-                finall.append(entry)
+                ne = sabber(day,less,ta,teach)
+                print(ne)
         if teach == "ScJu":
             if less == "5" or less == "6" or less == "5 - 6":
                 print("alarm")
-                print(entry)
-                finall.append(entry)
+                ne = sabber(day,less,ta,teach)
+                print(ne)
     if day == "Dienstag":
         if teach == "MesD":
             if less == "1" or less == "2" or less == "1 - 2":
                 print("alarm")
-                print(entry)
-                finall.append(entry)
+                ne = sabber(day,less,ta,teach)
+                print(ne)
         if teach == "Sant":
             if less == "3":
                 print("alarm")
