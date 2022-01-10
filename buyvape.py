@@ -41,7 +41,7 @@ def main(ta,day,teach,less):
                 print("alarm")
                 ne = sabber(day,less,ta,teach)
                 print(ne)
-        if teach == "KleS" or teach == "FuhL" or teach == "Sc":
+        if teach == "KleS" or teach == "FuhL" or teach == "ScJu":
             if less == "5":
                 print("alarm")
                 ne = sabber(day,less,ta,teach)

@@ -5,15 +5,13 @@ from telegram.ext.commandhandler import CommandHandler
 from telegram.ext.messagehandler import MessageHandler
 from telegram.ext.filters import Filters
 import main as main
-import time
 import telegram_send
+import time
 
 
 def suckmyanus():
     sadge = main.main()
-    sad=""
-    for e in sadge:
-        sad = sad+ e
+    sad=''.join(sadge)
     print(type(sad))
     return sad
 
