@@ -10,7 +10,7 @@ def sabber(day,less,ma,teach):
     return stra
 def main(ta,day,teach,less):
     if day == "Montag":
-        if teach == "MonP":
+        if teach == "MesD":
             if less == "2":
                 print("alarm")
                 ne = sabber(day,less,ta,teach)

@@ -16,7 +16,6 @@ def main():
     dayvar = entries[0]
     day = dayvar['day']
     finall = []
-    print(len(entries))
     for s in range(len(entries)):
         step = entries[s]
         teach = step['Lehrer']
@@ -24,12 +23,7 @@ def main():
         less = step['Stunde']
         entry = entries[s]
         typ = step['Typ']
-        print(teach)
-        print(less)
         if buyvape.main(typ,day,teach,less):
             finall.append(buyvape.main(typ,day,teach,less))
             finall.append(" ")
-    try:
-        return finall
-    except:
-        pass
+    return finall
