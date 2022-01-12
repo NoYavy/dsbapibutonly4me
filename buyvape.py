@@ -83,7 +83,7 @@ def main(ta,day,teach,less):
                 print("alarm")
                 print(entry)
                 finall.append(entry)
-        if teach == "LanJ" or teach == "MutR" or teach == "KoSi" or teach == "PreM":
+        if teach == "LanJ" or teach == "MutR" or teach == "KoSi" or teach == "PreM" or teach == "MaiL":
             if less == "3" or less == "4" or less == "3 - 4":
                 print("alarm")
                 ne = sabber(day,less,ta,teach)
