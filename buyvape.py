@@ -3,6 +3,8 @@
 # Dienstag: Sc
 # Mittwoch: darstellendes Spiel
 # Freitag: Spanisch, Pi
+import json
+
 
 def sabber(day,less,ma,teach,fach,etea,eles):
     if ma == "Vertretung":
@@ -17,26 +19,9 @@ def sabber(day,less,ma,teach,fach,etea,eles):
     return stra
 def main(ta,day,teach,less,fach,etea,eles):
     if day == "Montag":
-        if teach == "ScJu":
-            if less == "1":
-                print("alarm")
-                ne = sabber(day,less,ta,teach,fach,etea,eles)
-                print(ne)
-        if teach == "MesD":
-            if less == "2":
-                print("alarm")
-                ne = sabber(day,less,ta,teach,fach,etea,eles)
-                print(ne)
-        if teach == "ObeI":
-            if less == "3" or less == "4" or less == "3 - 4":
-                print("alarm")
-                ne = sabber(day,less,ta,teach,fach,etea,eles)
-                print(ne)
-        if teach == "ScJu":
-            if less == "5" or less == "6" or less == "5 - 6":
-                print("alarm")
-                ne = sabber(day,less,ta,teach,fach,etea,eles)
-                print(ne)
+        with open("ml.json", "r") as f:
+            data = json.load(f)
+            data = data[0]
     if day == "Dienstag":
         if teach == "MesD":
             if less == "1" or less == "2" or less == "1 - 2":
@@ -92,9 +77,15 @@ def main(ta,day,teach,less,fach,etea,eles):
         if teach == "CosK":
             if less == "1" or less == "2" or less == "1 - 2":
                 print("alarm")
+<<<<<<< HEAD
                 ne = sabber(day,less,ta,teach,fach,etea,eles)
                 print(ne)
         if teach == "LanJ" or teach == "MutR" or teach == "KoSi" or teach == "PreM" or teach == "MaiL" or teach == "SAnt":
+=======
+                print(entry)
+                finall.append(entry)
+        if teach == "LanJ" or teach == "MutR" or teach == "KoSi" or teach == "PreM" or teach == "MaiL":
+>>>>>>> 59b85e57f26f4edd28b33cd2c1ca09382f7eaf1a
             if less == "3" or less == "4" or less == "3 - 4":
                 print("alarm")
                 ne = sabber(day,less,ta,teach,fach,etea,eles)
