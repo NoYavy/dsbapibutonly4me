@@ -1,9 +1,5 @@
-from telegram.ext.updater import Updater
-from telegram.update import Update
-from telegram.ext.callbackcontext import CallbackContext
-from telegram.ext.commandhandler import CommandHandler
-from telegram.ext.messagehandler import MessageHandler
-from telegram.ext.filters import Filters
+import requests
+import json
 import main as fu
 import telegram_send
 import time
@@ -43,7 +39,27 @@ sma = sad
 # if safa == sma:
 #     hara = False
 # if hara:
-telegram_send.send(messages=[sma])
+jon = '''
+{
+  "embeds": [
+    {
+      "title": ":red_circle: News",
+      "description": "",
+      "color": 15746887,
+      "footer": {
+        "text": "News"
+      },
+      "timestamp": "2020-06-14T15:12:00.000Z"
+    }
+  ]
+}
+
+'''
+url = 'https://discord.com/api/webhooks/945314444282585099/GaFrg1A7-YfE1hz04L_90uuIv3tbgP5mnShcHBxdWO8FeFNX-osJeZUI7LKk9zMBlbAw'
+data = json.load(jon)
+data['embeds'][0]['timestamp'] = datetime.datetime.utcnow().isoformat()
+data['embeds'][0]['description'] = sma
+x = requests.post(url, json = data)
 f = open("used.txt", "w")
 f.write(sma)
 f.close
