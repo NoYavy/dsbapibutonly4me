@@ -32,8 +32,8 @@ f = open('used.txt', 'r')
 safa = f.read()
 f.close
 hara = True
-#sadge = main()
-sadge = 'foo'
+sadge = main()
+#sadge = 'foo'
 sad=''.join(sadge)
 sma = sad
 # if safa == sma:
