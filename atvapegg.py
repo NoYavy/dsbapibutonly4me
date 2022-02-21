@@ -6,39 +6,13 @@ import dsbapi as dsb
 import time
 import datetime
 import buyvape
-
-def main():
-    days = ["Montag","Dienstag","Mittwoch","Donnerstag","Freitag", "Samstag","Sonntag"]
-    klasse = "11c"
-    ownFields = ['Stunde','Lehrer','Fach','Raum','Anmerkung','Typ']
-    dsbclient = dsb.DSBApi("243322", "HammerHai21", tablemapper=ownFields)
-    entries = dsb.DSBApi.fetch_entries(dsbclient)
-    dayvar = entries[0]
-    day = dayvar['day']
-    finall = []
-    for s in range(len(entries)):
-        step = entries[s]
-        teach = step['Lehrer']
-        teach = teach[:4]
-        less = step['Stunde']
-        entry = entries[s]
-        typ = step['Typ']
-        if buyvape.main(typ,day,teach,less):
-            finall.append(buyvape.main(typ,day,teach,less))
-            finall.append(" ")
-    return finall
+import main as maniac
+import aaron as a
 
 f = open('used.txt', 'r')
 safa = f.read()
 f.close
 hara = True
-sadge = main()
-#sadge = 'foo'
-sad=''.join(sadge)
-sma = sad
-# if safa == sma:
-#     hara = False
-# if hara:
 jon = '''
 {
   "content": null,
@@ -58,11 +32,16 @@ jon = '''
 
 '''
 url = 'https://discord.com/api/webhooks/945314444282585099/GaFrg1A7-YfE1hz04L_90uuIv3tbgP5mnShcHBxdWO8FeFNX-osJeZUI7LKk9zMBlbAw'
-data = json.loads(jon)
-data['embeds'][0]['timestamp'] = datetime.datetime.utcnow().isoformat()
-data['embeds'][0]['description'] = sma
-print (data)
-x = requests.post(url, json = data)
+sadge = maniac.main()
+elim = sadge
+sma = ''.join(sadge)
+if safa == sma:
+    hara = False
+if hara:
+    data = json.loads(jon)
+    data['embeds'][0]['timestamp'] = datetime.datetime.utcnow().isoformat()
+    data['embeds'][0]['description'] = sma
+    x = requests.post(url, json = data)
 f = open("used.txt", "w")
 f.write(sma)
 f.close
