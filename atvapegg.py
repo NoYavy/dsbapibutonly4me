@@ -7,7 +7,6 @@ import time
 import datetime
 import buyvape
 import main as maniac
-import aaron as a
 
 f = open('used.txt', 'r')
 safa = f.read()
