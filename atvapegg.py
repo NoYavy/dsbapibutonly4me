@@ -11,7 +11,7 @@ import time
 import datetime
 import buyvape
 import main as maniac
-
+import aaron as a
 
 f = open('used.txt', 'r')
 safa = f.read()
@@ -24,6 +24,7 @@ if safa == sma:
     hara = False
 if hara:
     telegram_send.send(messages=[sma])
+    a.main(sma)
 f = open("used.txt", "w")
 f.write(sma)
 f.close
