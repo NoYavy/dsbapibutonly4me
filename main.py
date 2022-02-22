@@ -13,17 +13,31 @@ def main():
     ownFields = ['Stunde','Lehrer','Fach','Raum','Anmerkung','Typ']
     dsbclient = dsb.DSBApi("243322", "HammerHai21", tablemapper=ownFields)
     entries = dsb.DSBApi.fetch_entries(dsbclient)
+    if len(entries) > 1:
+        entries = entries[0]
+    print(len(entries))
     dayvar = entries[0]
     day = dayvar['day']
     finall = []
+    print(entries)
     for s in range(len(entries)):
         step = entries[s]
-        teach = step['Lehrer']
-        teach = teach[:4]
+        teacha = step['Lehrer']
+        teach = teacha[:4]
         less = step['Stunde']
         entry = entries[s]
-        typ = step['Typ']
-        if buyvape.main(typ,day,teach,less):
-            finall.append(buyvape.main(typ,day,teach,less))
-            finall.append(" ")
+        tap = step['Typ']
+        fach = step['Fach']
+        if tap == "Vertretung":
+            etea = teacha[5:]
+            lass = fach[:3]
+            eles = fach[4:]
+        else:
+            etea = ""
+            eles = ""
+            lass = ""
+        if buyvape.main(tap,day,teach,less,fach,etea,eles,lass) and buyvape.main(tap,day,teach,less,fach,etea,eles,lass) not in finall:
+            finall.append(buyvape.main(tap,day,teach,less,fach,etea,eles,lass))
+            finall.append("\n")
+    print(finall)
     return finall
