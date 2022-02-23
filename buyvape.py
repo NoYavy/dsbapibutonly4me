@@ -21,8 +21,8 @@ def sabber(day,less,ma,teach,fach,etea,eles,lass):
 
 def main(ta,day,teach,less,fach,etea,eles,lass):
     daylist = ["Montag","Dienstag","Mittwoch","Donnerstag","Freitag"]
-    dayindex = daylist.index(day)
-    with open("ml.json", "r") as f:
+
+    with open("/home/noyavy/dsbapibutonly4me/ml.json", "r") as f:
         data = json.load(f)
         data = data["Data"][dayindex]
     try:

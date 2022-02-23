@@ -8,7 +8,7 @@ import datetime
 import buyvape
 import main as maniac
 
-f = open('used.txt', 'r')
+f = open('/home/noyavy/dsbapibutonly4me/used.txt', 'r')
 safa = f.read()
 f.close
 hara = True
@@ -41,6 +41,6 @@ if hara:
     data['embeds'][0]['timestamp'] = datetime.datetime.utcnow().isoformat()
     data['embeds'][0]['description'] = sma
     x = requests.post(url, json = data)
-f = open("used.txt", "w")
+f = open("/home/noyavy/dsbapibutonly4me/used.txt", "w")
 f.write(sma)
 f.close

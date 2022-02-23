@@ -1,0 +1,15 @@
+{
+  "content": null,
+  "embeds": [
+    {
+      "title": ":green_circle: News",
+      "description": "h",
+      "color": 4714574,
+      "footer": {
+        "text": "News"
+      },
+      "timestamp": "2020-06-14T15:12:00.000Z"
+    }
+  ],
+  "avatar_url": "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/a7/59/e1/a759e148-6e66-d438-0637-6a1b76ae255b/source/200x200bb.jpg"
+}
